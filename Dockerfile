@@ -20,6 +20,7 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends software-properties-common \
     curl unzip git build-essential gcc make cmake pkg-config python3 python3-dev python3-pip \
     libgtk-3-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
+    gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
     libavcodec-dev libavformat-dev libswscale-dev libavresample-dev libx264-dev
 RUN python3 -m pip --no-cache-dir install --upgrade pip setuptools numpy==1.19.5
 
