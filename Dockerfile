@@ -196,8 +196,8 @@ RUN ln -s $(which python3) /usr/local/bin/python
 
 # Clone Repo
 WORKDIR /opencv
-RUN git clone -b '4.5.1' --depth 1 https://github.com/opencv/opencv
-RUN git clone -b '4.5.1' --depth 1 https://github.com/opencv/opencv_contrib
+RUN git clone -b '4.5.2' --depth 1 https://github.com/opencv/opencv
+RUN git clone -b '4.5.2' --depth 1 https://github.com/opencv/opencv_contrib
 # Build openvc with gstreamer support
 WORKDIR build
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
