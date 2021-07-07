@@ -1,7 +1,7 @@
 ARG UBUNTU_VERSION=20.04
-ARG CUDA=11.0.3
+ARG CUDA=11.2.0
 ARG CUDNN_MAJOR_VERSION=8
-ARG TF_PACKAGE_VERSION=2.4.1
+ARG TF_PACKAGE_VERSION=2.5.0
 FROM nvidia/cuda${ARCH:+-$ARCH}:${CUDA}-cudnn${CUDNN_MAJOR_VERSION}-devel-ubuntu${UBUNTU_VERSION} as base
 
 # ARCH and CUDA are specified again because the FROM directive resets ARGs
@@ -196,8 +196,8 @@ RUN ln -s $(which python3) /usr/local/bin/python
 
 # Clone Repo
 WORKDIR /opencv
-RUN git clone -b '4.5.2' --depth 1 https://github.com/opencv/opencv
-RUN git clone -b '4.5.2' --depth 1 https://github.com/opencv/opencv_contrib
+RUN git clone -b '4.5.3' --depth 1 https://github.com/opencv/opencv
+RUN git clone -b '4.5.3' --depth 1 https://github.com/opencv/opencv_contrib
 # Build openvc with gstreamer support
 WORKDIR build
 RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
